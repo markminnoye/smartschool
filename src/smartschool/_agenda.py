@@ -36,6 +36,10 @@ class SmartschoolLessons(AgendaPoster):
     """
     Interface to the retrieval of lessons for a certain date.
 
+    Deprecated: Schoolagenda XML was read-only from 2022 and removed 31 Aug 2025.
+    The website timetable is Planner REST — use :class:`smartschool.PlannedElements`
+    (``GET /planner/api/v1/planned-elements/user/{id}`` without ``types``).
+
     To reproduce: open the agenda, one of the XHR calls is this one.
 
     This includes (for an example check the tests):

@@ -12,6 +12,10 @@ class FutureTasks(SessionMixin):
     """
     Class that interfaces the retrieval of any task that needs to be made in the near future.
 
+    Deprecated: ``POST /Agenda/Futuretasks/getFuturetasks`` is the old Schoolagenda
+    sidebar. Prefer :class:`smartschool.PlannedElements` with a ``types`` filter
+    (for example ``planned-assignments,planned-to-dos``).
+
     Example:
     -------
     >>> for day in FutureTasks(session):

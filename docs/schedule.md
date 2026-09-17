@@ -1,5 +1,11 @@
 # Schedule & Agenda
 
+The Schoolagenda XML module (`SmartschoolLessons`, `SmartschoolHours`, `SmartschoolMomentInfos`)
+was read-only from 2022 and removed as a product on 31 Aug 2025. The website timetable is
+Planner REST — see [planner.md](planner.md) (`PlannedElements`, no `types` filter).
+
+These XML clients remain for schools that still answer the dispatcher.
+
 ## Daily Lessons
 
 Retrieve the lesson schedule for a given date range (defaults to 20 days from the provided date).

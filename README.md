@@ -43,8 +43,8 @@ for course in Courses(session):
 | **My Documents** | `MyDocs` | Browse, download, upload and manage your personal documents |
 | **Results** | `Results`, `Reports`, `Periods` | Grades, evaluations, report cards |
 | **Messages** | `MessageHeaders`, `Message`, `Attachments`, `MessageComposerForm`, `RecipientType` | Inbox/outbox, compose, attachments, labels |
-| **Schedule** | `SmartschoolLessons`, `SmartschoolHours` | Daily schedules, class periods |
-| **Planner** | `PlannedElements`, `FutureTasks` | Assignments, deadlines, activities |
+| **Schedule** | `SmartschoolLessons`, `SmartschoolHours` | Legacy Schoolagenda XML (deprecated; use Planner) |
+| **Planner** | `PlannedElements`, `PinnedPlannedElements`, `FutureTasks` | Calendar GET, pinned items, legacy future tasks |
 | **Support** | `StudentSupportLinks` | School support resources |
 
 ## Documentation
