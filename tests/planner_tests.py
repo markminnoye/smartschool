@@ -1,10 +1,12 @@
+import json
 from datetime import date
+from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 import pytest
 import time_machine
 
-from smartschool import ApplicableAssignmentTypes, PinnedPlannedElements, PlannedElements, Smartschool
+from smartschool import ApplicableAssignmentTypes, PinnedPlannedElements, PlannedElement, PlannedElements, Smartschool
 
 
 def _query(requests_mock) -> dict[str, list[str]]:
@@ -80,3 +82,14 @@ def test_applicable_assignment_types(session: Smartschool):
     assert obj.name == "-"
     assert obj.platform_id == 49
     assert obj.weight == pytest.approx(1.0)
+
+
+def test_planned_element_tolerates_missing_restore_from_trash():
+    """Live calendar GETs omit canUserRestoreFromTrash on some lesson payloads."""
+    fixture = Path(__file__).parent / "requests/get/planner/api/v1/planned-elements/user/49_10880_2/1b58e50a13c1.json"
+    payload = json.loads(fixture.read_text(encoding="utf8"))[0]
+    del payload["capabilities"]["canUserRestoreFromTrash"]
+
+    element = PlannedElement(**payload)
+
+    assert element.capabilities.can_user_restore_from_trash is False

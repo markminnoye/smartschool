@@ -2,6 +2,7 @@
 - feat(planner): `PlannedElements` matches the website calendar GET by default (omit `types`); optional `types` and `includes`
 - feat(planner): `PinnedPlannedElements` for `GET /planner/api/v1/planned-elements/pinned`
 - fix(planner): `ApplicableAssignmentTypes` uses `applicable-assignment-types` (website spelling)
+- fix(planner): `UserCapabilities.can_user_restore_from_trash` is optional (omitted on live lesson payloads)
 - docs: Schoolagenda XML (`SmartschoolLessons`) and `FutureTasks` marked deprecated in favour of Planner REST
 
 ## 0.10.0 (2026-07-24)

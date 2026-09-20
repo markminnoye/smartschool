@@ -517,7 +517,6 @@ class UserSeeProperties:  # pylint: disable=too-many-instance-attributes  # mirr
 @dataclass(config=_config)
 class UserCapabilities:  # pylint: disable=too-many-instance-attributes  # mirrors the API payload
     can_user_trash: bool
-    can_user_restore_from_trash: bool
     can_user_delete: bool
     can_user_edit: bool
     can_user_replace: bool
@@ -525,6 +524,7 @@ class UserCapabilities:  # pylint: disable=too-many-instance-attributes  # mirro
     can_user_change_user_color: bool
     can_user_see_properties: UserSeeProperties
 
+    can_user_restore_from_trash: bool = False
     can_user_edit_presence: bool = False
     can_user_change_user_view_metadata: bool = False
     can_user_change_organisers: bool = False
