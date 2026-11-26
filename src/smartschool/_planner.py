@@ -101,7 +101,7 @@ class PinnedPlannedElements(SessionMixin, Iterable[PlannedElement]):
     """
 
     def __iter__(self) -> Iterator[PlannedElement]:
-        for element in self.session.json("/planner/api/v1/planned-elements/pinned"):
+        for element in self.session.json("/planner/api/v1/planned-elements/pinned", data={"includes": ",".join(_PLANNER_INCLUDES)}):
             yield PlannedElement(**element)
 
 

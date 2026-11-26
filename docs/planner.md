@@ -81,9 +81,9 @@ for element in PinnedPlannedElements(session):
 
 ### Includes
 
-`PlannedElements` asks the planner for `icon`, `courses`, `locations`, `attachments`, `weblinks`, `deeplinks`,
-`partner-weblinks`, `public-info`, `planned-to-dos`, `upload-folders`, and `labels` on every list call, so each
-`PlannedElement` already carries `public_info`, `attachments`, and `weblinks`.
+`PlannedElements` and `PinnedPlannedElements` ask the planner for `icon`, `courses`, `locations`, `attachments`,
+`weblinks`, `deeplinks`, `partner-weblinks`, `public-info`, `planned-to-dos`, `upload-folders`, and `labels` on every
+list call, so each `PlannedElement` already carries `public_info`, `attachments`, and `weblinks`.
 
 ### Locations
 

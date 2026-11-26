@@ -126,7 +126,8 @@ def test_pinned_planned_elements(session: Smartschool, requests_mock):
     sut = list(PinnedPlannedElements(session))
 
     assert requests_mock.last_request.path == "/planner/api/v1/planned-elements/pinned"
-    assert not requests_mock.last_request.query
+    includes = set(requests_mock.last_request.qs["includes"][0].split(","))
+    assert {"icon", "courses", "locations", "attachments", "weblinks", "public-info"} <= includes
     assert [(element.name, element.pinned) for element in sut] == [("To-do: Photo assignment", True)]
     assert sut[0].planned_element_type == "planned-to-dos"
     assert sut[0].organisers.users[0].name.starting_with_first_name == "First Parent"
